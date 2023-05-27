@@ -23,8 +23,8 @@ The folder structure in this repo looks like this:
 | Question 3 | Q3_design.txt | A design for the problem in Question 3 |
 
 
-### Steps to follow: 
+### Execution steps to follow: 
 ```
-    sh setup.sh
-    python3 code/main.py > output/results.txt
+sh setup.sh
+python3 code/main.py > output/results.txt
 ```
