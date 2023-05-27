@@ -48,18 +48,7 @@ def question_2c(game_state_df):
     team1_CT_alive = game_state_df[(game_state_df['side'] == 'CT') & (game_state_df['team'] == 'Team2') & (game_state_df['is_alive'] == True) & (game_state_df['area_name'] == 'BombsiteB')]
     team1_CT_alive_1 = team1_CT_alive[['x', 'y', 'player']].drop_duplicates()
     plt.hist2d(team1_CT_alive_1['x'], team1_CT_alive_1['y'])
-    plt.save_fig('../output/result.png')
-    return " Check the heatmap image saved the output directory! (../output/result.png)"
-
-
-
-if __name__ == "main":
-
-    obj = ProcessGameState('../data/game_state_frame_data.parquet')
-    game_state_df = obj.get_processed_game_state()
-
-    print(f"Is entering via the light blue boundary a common strategy used by Team2 on T (terrorist) side?\t {question_2a(game_state_df)}\n")
-
-    print(f"What is the average timer that Team2 on T(terrorist) side enters BombsiteB with least 2 rifles or SMGs?\t {question_2b(game_state_df)}\n")
-    
-    print(f"Where do you suspect Team 2's CT to be waiting inside BombsiteB ? {question_2c(game_state_df)}")    
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.savefig('output/result.png')
+    return "Check the heatmap image saved the output directory! (output/result.png)"
