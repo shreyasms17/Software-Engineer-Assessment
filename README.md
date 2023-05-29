@@ -7,7 +7,7 @@ The folder structure in this repo looks like this:
 #### Folder Structure:
 | Name | Files |
 |--|--|
-|.|Q3_design.txt, approach.txt, README.md, setup.sh, SWE Intern Assessment.pdf|
+|.|Q3_design.txt, approach.md, README.md, setup.sh, SWE Intern Assessment.pdf|
 | code/ | process_game_state.py, question_2.py, main.py |
 | data/|game_state_frame_data.parquet|
 |map/|de_overpass_radar.jpeg|
@@ -22,7 +22,7 @@ The folder structure in this repo looks like this:
 | Question 1 & 2|code/main.py|Creates an object of ProcessGameState class & executes functions in code/question_2.py|
 | Question 3 | Q3_design.txt | A design for the problem in Question 3 |
 
-*Interpretation/findings can be found in approach.txt*
+*Interpretation/findings can be found in approach.md*
 
 ### Answers to subquestions in Q2
 | Subquestion | Answer |
