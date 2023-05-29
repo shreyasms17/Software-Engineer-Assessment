@@ -2,12 +2,14 @@
 
 
 #### Question 1
-A class ProcessGameState was created with class variables 
+A class ProcessGameState was created with class variables
+
     1. bounding_polygon which describes outer points the light blue area denoting the choke area
     2. game_state_df, a dataframe placeholder to hold the dataframe
     3. input parquet file path
 
 The class methods include:
+
     1. read_input, that reads the input parquet file into the game_state_df dataframe
     2. check_in_choke_area, that checks if a particular coordinate falls inside the choke area
     3. compute_row_position, which checks if a row in the dataframe is inside the choke area or not and creates a boolean column in game_state_df called 'in_choke_area'
