@@ -24,6 +24,13 @@ The folder structure in this repo looks like this:
 
 *Interpretation/findings can be found in approach.txt*
 
+### Answers to subquestions in Q2
+| Subquestion | Answer |
+| -- |--|
+| a | No|
+|b|01:24|
+|c| Towards the east side on the very North of BombsiteB|
+
 ### Execution steps to follow: 
 ```
 sh setup.sh
