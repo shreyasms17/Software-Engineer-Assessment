@@ -29,7 +29,7 @@ The folder structure in this repo looks like this:
 | -- |--|
 | a | No|
 |b|01:24|
-|c| Towards the east side on the very North of BombsiteB|
+|c| North-East side of BombsiteB|
 
 ### Execution steps to follow: 
 ```
