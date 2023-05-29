@@ -1,0 +1,4 @@
+# Q3 Design
+
+A design to implement a POC/ a prototype is to have a database that stores all game state data and have the stakeholders operate a web application to retrieve required metrics.
+The web application would have to feature each KPI/metric. Its frontend can include triggers (like a button click) to initiate actions. When triggered, these actions call a GET REST API to the backend which then retrieves relevant data from the database. The API then performs computation on the data to obtain the metric that's required and delivers the response back to the frontend for the stakeholders to see.

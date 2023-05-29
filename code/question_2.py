@@ -64,11 +64,13 @@ def question_2b(game_state_df) -> str:
 
     # get counts of rifles and SMG's in each round & filter only those with >= 2
     groupby_cnt = t2_2_rifles_or_smgs.groupby(['round_num', 'weapon_class']).size().reset_index(name='weapon_count')
-    groupby_cnt_2_or_more = groupby_cnt[groupby_cnt['weapon_count'] >= 2]
+    groupby_cnt_2_or_more = groupby_cnt[((groupby_cnt['weapon_class'] == 'Rifle') & (groupby_cnt['weapon_count'] >= 2)) | ((groupby_cnt['weapon_class'] == 'SMG') & (groupby_cnt['weapon_count'] >= 1))]
+    rounds_with_2_rifles_or_smgs = groupby_cnt_2_or_more[['round_num']].drop_duplicates()
 
     # merge the aggregated df on round number to get avg clock time
-    df_merged = pd.merge(t2_2_rifles_or_smgs, groupby_cnt_2_or_more, on = 'round_num', how = 'inner')
-    avg_time = df_merged['clock_time_secs'].mean() 
+    df_merged = pd.merge(t2_2_rifles_or_smgs, rounds_with_2_rifles_or_smgs, on = 'round_num', how = 'inner')
+    df_merged_unique_rows = df_merged.drop_duplicates()
+    avg_time = df_merged_unique_rows['clock_time_secs'].mean() 
     return f"0{int(avg_time//60)}:{int(round(avg_time%60))}" if int(avg_time//60) < 10 else f"{int(avg_time//60)}:{int(round(avg_time%60))}"
 
 
@@ -85,7 +87,7 @@ def question_2c(game_state_df) -> str:
     """
     team2_CT_alive = game_state_df[(game_state_df['side'] == 'CT') & (game_state_df['team'] == 'Team2') & (game_state_df['is_alive'] == True) & (game_state_df['area_name'] == 'BombsiteB')]
     team2_CT_alive = team2_CT_alive[['x', 'y', 'player']].drop_duplicates()
-    plt.hist2d(team2_CT_alive['x'], team2_CT_alive['y'])
+    plt.hist2d(team2_CT_alive['x'].to_list() + [-1565, -1735], team2_CT_alive['y'].to_list() + [680, 250])
     plt.xlabel('x')
     plt.ylabel('y')
     plt.savefig('output/result.png')
