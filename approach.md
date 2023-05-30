@@ -22,18 +22,19 @@ The class methods include:
 To check if entering via the choke area is the common strategy used by terrorist side of Team2, we check if the members is alive first.
 Since every round counts as an entry for a player, we check at the round, tick, and player grain level.
 The earliest tick is retrieved by implementing the rank logic only to see whether the player's initial area in a round was in the choke area or not.
-The counts were then compared, and entering through the common area was not a common strategy at all.
+With respect to the given data, 75 members do not enter the choke area vs 0 entering the choke area, hence it isn't a common strategy used by the terrorist side of Team2.
 
 
 #### Question 2b
 To get the average clock time when Team2 on terrorist side enters “BombsiteB” with least 2 rifles or SMG, we first filter on the team membership, terrorist side and them being alive.
 The rows with earliest tick is then obtained via the rank logic that shows their first entry into BombsiteB.
 A filter is applied on Rifles and SMGs and the weapon count is obtained by doing a group by on the round number and the weapon class and then the condition for each weapon is checked.
-Only those rounds with Rifle count >= 2 or SMG count >= 1 are filtered and the avg clock time is calculated for all members in that round.
+Only those rounds with Rifle count >= 2 or SMG count >= 1 are filtered and the avg clock time is calculated for all members in that round, which turned out to be 1 min & 24 seconds.
 
 
 #### Question 2c 
-A heatmap was constructed based on the positions of Team2 on the CT side inside BombsiteB along with two reference points (point 17 and 13) of the choke area to get a relative position of where the members would be waiting inside the BombsiteB.
+A heatmap was constructed based on the positions of Team2 on the CT side inside BombsiteB along with two reference points (point 17 and 13) of the choke area to get a relative position of where the members would be waiting inside the BombsiteB. 
+With respect to the given data, majority of the members wait in the north-eastern side of BombsiteB.
 
 
 #### Question 3
