@@ -22,7 +22,7 @@ The class methods include:
 To check if entering via the choke area is the common strategy used by terrorist side of Team2, we check if the members is alive first.
 Since every round counts as an entry for a player, we check at the round, tick, and player grain level.
 The earliest tick is retrieved by implementing the rank logic only to see whether the player's initial area in a round was in the choke area or not.
-With respect to the given data, 75 members do not enter the choke area vs 0 entering the choke area, hence it isn't a common strategy used by the terrorist side of Team2.
+With respect to the available data, there were 75 instances where team members did not enter the choke area, while there were no instances of them entering the choke area. This indicates that it is not a common strategy employed by the terrorist side of Team2.
 
 
 #### Question 2b
